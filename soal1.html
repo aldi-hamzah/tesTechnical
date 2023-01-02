@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jawaban Soal No 1</title>
+</head>
+<body>
+    <h2>Soal 1</h2>
+    <input type="text" id="number">
+    <button onclick="soal1()">Jawaban</button><br>
+    <br>Jawaban : 
+    <p id="jawaban1">
+
+    </p>
+</body>
+<script>
+    const hitungPasang = (array) => {
+        let pasang = 0;
+        array.sort();
+        for(let i = 0; i < array.length;){
+            if(array[i] === array[i + 1]){
+                pasang++;
+                i = i + 2;
+            } else {
+                i++;
+            }
+        }
+        return pasang;
+    }
+    
+    const soal1 = () => {
+        let pasang = [];
+        let number = document.getElementById('number').value;
+        array = number.split(" ");
+        jumlahPasang = hitungPasang(array);
+        // console.log(array);
+        // for(let i = 0; i < array.length; i++){
+        //     let x = false;
+        //     console.log(i);
+
+        //     for(let j = 0; j < array.length; j++){
+        //         if(array[i] === array [j]){
+        //             x = true;
+        //         }
+        //     }
+        //     if(x)
+        //         pasang.push(array[i]);
+        // }
+        // console.log(pasang);
+        document.getElementById("jawaban1").innerHTML = jumlahPasang;
+    }
+</script>
+</html>
+

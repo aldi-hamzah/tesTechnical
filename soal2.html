@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jawaban Soal No 2</title>
+</head>
+<body>
+    <h2>Soal 2</h2>
+    <input type="text" id="string">
+    <button onclick="soal2()">Jawaban</button><br><br>
+    Jawaban : 
+    <p id="jawaban2"></p>
+</body>
+
+<script>
+    const checkSpecialChar = (str) => {
+        const specialChar = "!@#$%^&*()_+=~[]{};:<>/";
+        for(let i = 0; i < specialChar.length; i++){
+            if(str.indexOf(specialChar[i]) > -1){
+                return true;
+            }
+        }
+    }
+
+    const soal2 = () => {
+        let string = document.getElementById('string').value;
+        array = string.split(" ");
+        let strSpecial = 0;
+        
+        for(let i = 0; i < array.length; i++) {
+            if(checkSpecialChar(array[i])){
+                strSpecial++;
+            };
+        }
+
+        document.getElementById("jawaban2").innerHTML = array.length-strSpecial;
+    }
+
+</script>
+
+</html>
